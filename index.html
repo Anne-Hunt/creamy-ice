@@ -28,114 +28,120 @@
     </nav>
 
     <main class="container-fluid">
-        <section class="row vessel">
-            <div class="col-8 selections">
-                <section class="row">
-                    <div class="col-6 card waffle-bowl">
+        <section class="row cart">
+            <div class="col-3 shopping-cart">
+                <div class="card">
+                    <p>Order # <span id="orderNum"></span></p>
+                    <hr>
+                    <div id="cartElem">
+                    </div>
+                    <hr>
+                    <span>Subtotal</span><span id="subtotal"></span>
+                    <p>Tax</p> <span id="tax"></span>
+                    <p>Total</p> <span id="total"></span>
+                    <button id="checkout" class="btn btn-success" onclick="checkoutCart()">Checkout</button>
+                </div>
+            </div>
+            <div class="col-9 selections">
+                <section class="row justify-content-center align-items-center">
+                    <div class="col-2 card waffle-bowl">
                         <div class="card wb-image">
                             <p>Waffle Bowl $1</p>
                             <button class="btn btn-warning" onclick="addToCart('waffle-bowl')">Add to Order</button>
                         </div>
                     </div>
-                    <div class="col-6 card waffle-cone">
+                    <div class="col-2 card waffle-cone">
                         <div class="card wc-image">
                             <p>Waffle Cone $1</p>
                             <button class="btn btn-warning" onclick="addToCart('waffle-cone')">Add to Order</button>
                         </div>
                     </div>
-                </section>
-                <section class="row">
-                    <div class="col-6 card dipped-cone">
+                    <div class="col-2 card dipped-cone">
                         <div class="card dc-image">
                             <p>Dipped Cone $2</p>
                             <button class="btn btn-warning" onclick="addToCart('dipped-cone')">Add to Order</button>
                         </div>
                     </div>
-                    <div class=" col-6 card bowl">
+                    <div class=" col-2 card bowl">
                         <div class="card b-image">
                             <p>Disposable Bowl $1.50</p>
                             <button class="btn btn-warning" onclick="addToCart('bowl')">Add to Order</button>
                         </div>
                     </div>
                 </section>
-            </div>
-            <div class="col-4 shopping-cart">
-                <div class="card">
-                    <p>Order #</p>
-                    <hr>
-                    <div id="cartElem">
 
+                <section class="row cream">
+                    <div class="col-4 card vanilla">
+                        <div class="card vanilla-image">
+                            <p>French Vanilla $1.50</p>
+                            <button class="btn btn-warning" onclick="addToCart('vanilla')">Add to Order</button>
+                        </div>
                     </div>
-                    <hr>
-                    <span>Subtotal</span><span id="subtotal"></span>
-                    <p>Tax</p> <span id="tax"></span>
-                    <p>Total</p> <span id="total"></span>
-                    <button id="checkout" class="btn btn-success" onclick="checkout()">Checkout</button>
-                </div>
-            </div>
-        </section>
-        <section class="row cream">
-            <div class="col-4 card vanilla">
-                <div class="card vanilla-image">
-                    <p>French Vanilla $1.50</p>
-                    <button class="btn btn-warning" onclick="addToCart('vanilla')">Add to Order</button>
-                </div>
-            </div>
-            <div class="col-4 card chocolate">
-                <div class="card chocolate-image">
-                    <p>Creamy chocolate $1.50</p>
-                    <button class="btn btn-warning" onclick="addToCart('chocolate')">Add to Order</button>
-                </div>
-            </div>
-            <div class="col-4 card strawberry">
-                <div class="card strawberry-image">
-                    <p>Fresh Strawberry $2</p>
-                    <button class="btn btn-warning" onclick="addToCart('strawberry')">Add to Order</button>
-                </div>
-            </div>
-            <div class="col-4 card butter-brickle">
-                <div class="card butterbrickle-image">
-                    <p>Butter Brickle $2</p>
-                    <button class="btn btn-warning" onclick="addToCart('butter-brickle')">Add to Order</button>
-                </div>
-            </div>
-            <div class="col-4 card potato">
-                <div class="card potato-image">
-                    <p>Potato $1</p>
-                    <button class="btn btn-warning" onclick="addToCart('potato')">Add to Order</button>
-                </div>
-            </div>
-            <div class="col-4 card cranberry">
-                <div class="card cranberry-image">
-                    <p>Cranberry $3</p>
-                    <button class="btn btn-warning" onclick="addToCart('cranberry')">Add to Order</button>
-                </div>
-            </div>
-        </section>
-        <section class="row toppings">
-            <div class="col-4 card jimmies">
-                <div class="card jimmies-image">
-                    <p>Sprinkles $.50</p>
-                    <button class="btn btn-warning" onclick="addToCart('jimmies')">Add to Order</button>
-                </div>
-            </div>
-            <div class="col-4 card chips">
-                <div class="card chips-image">
-                    <p>Chocolate Chips $1</p>
-                    <button class="btn btn-warning" onclick="addToCart('chips')">Add to Order</button>
-                </div>
-            </div>
-            <div class="col-4 card syrup">
-                <div class="card syrup-image">
-                    <p>Chocolate Syrup $1</p>
-                    <button class="btn btn-warning" onclick="addToCart('syrup')">Add to Order</button>
-                </div>
+                    <div class="col-4 card chocolate">
+                        <div class="card chocolate-image">
+                            <p>Creamy chocolate $1.50</p>
+                            <button class="btn btn-warning" onclick="addToCart('chocolate')">Add to Order</button>
+                        </div>
+                    </div>
+                    <div class="col-4 card strawberry">
+                        <div class="card strawberry-image">
+                            <p>Fresh Strawberry $2</p>
+                            <button class="btn btn-warning" onclick="addToCart('strawberry')">Add to Order</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="row cream">
+                    <div class="col-4 card butter-brickle">
+                        <div class="card butterbrickle-image">
+                            <p>Butter Brickle $2</p>
+                            <button class="btn btn-warning" onclick="addToCart('butter-brickle')">Add to Order</button>
+                        </div>
+                    </div>
+                    <div class="col-4 card potato">
+                        <div class="card potato-image">
+                            <p>Potato $1</p>
+                            <button class="btn btn-warning" onclick="addToCart('potato')">Add to Order</button>
+                        </div>
+                    </div>
+                    <div class="col-4 card cranberry">
+                        <div class="card cranberry-image">
+                            <p>Cranberry $3</p>
+                            <button class="btn btn-warning" onclick="addToCart('cranberry')">Add to Order</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="row toppings">
+                    <div class="col-4 card jimmies">
+                        <div class="card jimmies-image">
+                            <p>Sprinkles $.50</p>
+                            <button class="btn btn-warning" onclick="addToCart('jimmies')">Add to Order</button>
+                        </div>
+                    </div>
+                    <div class="col-4 card chips">
+                        <div class="card chips-image">
+                            <p>Chocolate Chips $1</p>
+                            <button class="btn btn-warning" onclick="addToCart('chips')">Add to Order</button>
+                        </div>
+                    </div>
+                    <div class="col-4 card syrup">
+                        <div class="card syrup-image">
+                            <p>Chocolate Syrup $1</p>
+                            <button class="btn btn-warning" onclick="addToCart('syrup')">Add to Order</button>
+                        </div>
+                    </div>
+                </section>
             </div>
         </section>
     </main>
 
-    <footer>
-
+    <footer class="container-fluid bg-dark">
+        <section class="row">
+            <div class="col">
+                <h4>Made with Love by Anne Hunt</h4>
+            </div>
+        </section>
     </footer>
     <script src="app.js"></script>
 </body>

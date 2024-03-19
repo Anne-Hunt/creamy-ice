@@ -73,6 +73,12 @@ let toppings = [
 
 let products = [...vessels, ...creams, ...toppings]
 
+let orderNum = 1000
+
+let currentOrder = []
+
+let orders = []
+
 /* WORKS, but does the same as the above so no need
 
 function productsList() {
@@ -88,20 +94,20 @@ function productsList() {
 function addToCart(productName) {
 
     let addedProduct = findProduct(productName)
-    console.log("find itemName")
+    //  console.log("find itemName")
 
     addedProduct.quantity++
-    console.log('added to cart', addedProduct)
+    //    console.log('added to cart', addedProduct)
     drawCart()
 }
 
 
 function findProduct(productName) {
     for (let i = 0; i < products.length; i++) {
-        console.log(products[i])
+        //        console.log(products[i])
         let product = products[i]
         if (product.name == productName) {
-            console.log('item found!')
+            //            console.log('item found!')
             return product
         }
     }
@@ -114,7 +120,7 @@ function drawCart() {
     for (let i = 0; i < products.length; i++) {
         let product = products[i]
         if (product.quantity > 0) {
-            cartContent += `<p>${product.quantity}x ${product.name} ${(product.quantity * product.price).toFixed(2)}<button class="btn btn-danger" onclick="removeProduct(product.quantity)">X</button></p>`
+            cartContent += `<p>${product.quantity}x ${product.name} ${(product.quantity * product.price).toFixed(2)}<button class="btn btn-danger p=0" onclick="removeProduct('${product.name}')">X</button></p>`
 
             cartSubtotal += product.quantity * product.price
         }
@@ -131,12 +137,38 @@ function drawCart() {
 
     let totalElem = document.getElementById('total')
     totalElem.innerHTML = `${(cartSubtotal + cartSubtotal * .05).toFixed(2)}`
+
+    let orderNumElem = document.getElementById('orderNum')
+    orderNumElem.innerHTML = `${orderNum}`
 }
 
-function removeProduct() {
+function removeProduct(productName) {
 
+    let removedProduct = findProduct(productName)
+    //    console.log("find itemName")
+
+    removedProduct.quantity--
+    //    console.log('removed', removedProduct)
+    drawCart()
 }
 
 function checkoutCart() {
+    createOrder()
+    for (let i = 0; i < products.length; i++) {
+        let product = products[i]
+        product.quantity = 0
+    }
+    orderNum++
+    drawCart()
+}
 
+function createOrder() {
+    for (let i = 0; i < products.length; i++) {
+        let product = products[i]
+        if (product.quantity > 0) {
+
+            orders.push('Num:', orderNum, product.name, product.quantity)
+        }
+        console.log(orders)
+    }
 }
