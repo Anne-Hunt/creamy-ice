@@ -1,0 +1,96 @@
+:root {
+    height: 20dvh;
+    width: 100%;
+}
+
+body {
+    background-color: black;
+}
+
+h1 {
+    font-family: Rubik Bubbles, sans-serif;
+}
+
+.wc-image {
+    background-image: url("https://images.unsplash.com/photo-1559703248-dcaaec9fab78?q=80&w=2864&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.wb-image {
+    background-image: none;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.dc-image {
+    background-image: none;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.b-image {
+    background-image: url("https://images.unsplash.com/photo-1510035618584-c442b241abe7?q=80&w=2796&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.vanilla-image {
+    background-color: bisque;
+    background-image: url("/assets/asfalt-dark.png");
+    width: 100%;
+    height: 200px;
+}
+
+.chocolate-image {
+    background-color: brown;
+    background-image: url("/assets/asfalt-dark.png");
+    width: 100%;
+    height: 200px;
+}
+
+.strawberry-image {
+    background-color: pink;
+    background-image: url("/assets/asfalt-dark.png");
+    width: 100%;
+    height: 200px;
+}
+
+.butterbrickle-image {
+    background-color: gold;
+    background-image: url("/assets/asfalt-dark.png");
+    width: 100%;
+    height: 200px;
+}
+
+.potato-image {
+    background-color: antiquewhite;
+    background-image: url("/assets/asfalt-dark.png");
+    width: 100%;
+    height: 200px;
+}
+
+.cranberry-image {
+    background-color: #800020;
+    background-image: url("/assets/asfalt-dark.png");
+    width: 100%;
+    height: 200px;
+}
+
+.jimmies-image {
+    background-image: url("https://plus.unsplash.com/premium_photo-1663839412090-27840de8cba0?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.chips-image {
+    background-image: url("https://images.unsplash.com/photo-1585502866757-30ae9e509e31?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.syrup-image {
+    background-image: url("https://images.unsplash.com/photo-1576186725671-1b44cc7f424c?q=80&w=2110&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    max-width: 100%;
+    object-fit: cover;
+}
