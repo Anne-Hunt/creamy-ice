@@ -1,21 +1,21 @@
 let vessels = [
     {
-        name: 'waffle-cone',
+        name: 'waffle cone',
         price: 1,
         quantity: 0
     },
     {
-        name: 'waffle-bowl',
+        name: 'waffle bowl',
         price: 1,
         quantity: 0
     },
     {
-        name: 'dipped-cone',
+        name: 'dipped cone',
         price: 2,
         quantity: 0
     },
     {
-        name: 'bowl',
+        name: 'plastic bowl',
         price: 1.5,
         quantity: 0
     }
@@ -37,7 +37,7 @@ let creams = [
         quantity: 0
     },
     {
-        name: 'butter-brickle',
+        name: 'butter brickle',
         price: 2,
         quantity: 0
     },
@@ -55,17 +55,17 @@ let creams = [
 
 let toppings = [
     {
-        name: 'jimmies',
+        name: 'sprinkles',
         price: .50,
         quantity: 0
     },
     {
-        name: 'chips',
+        name: 'chocolate chips',
         price: 1,
         quantity: 0
     },
     {
-        name: 'syrup',
+        name: 'chocolate syrup',
         price: 1,
         quantity: 0
     }
@@ -75,7 +75,7 @@ let products = [...vessels, ...creams, ...toppings]
 
 let orderNum = 1000
 
-let currentOrder = []
+let currentOrder = [{ id: orderNum }]
 
 let orders = []
 
@@ -120,7 +120,7 @@ function drawCart() {
     for (let i = 0; i < products.length; i++) {
         let product = products[i]
         if (product.quantity > 0) {
-            cartContent += `<p>${product.quantity}x ${product.name} ${(product.quantity * product.price).toFixed(2)}<button class="btn btn-danger p=0" onclick="removeProduct('${product.name}')">X</button></p>`
+            cartContent += `<p>${product.quantity}<span class="mdi mdi-close"></span> ${product.name} <span class="mdi mdi-currency-usd"></span>${(product.quantity * product.price).toFixed(2)}  <button class="btn btn-danger p-0" onclick="removeProduct('${product.name}')"><span class="mdi mdi-close-outline"></span></button></p>`
 
             cartSubtotal += product.quantity * product.price
         }
@@ -130,16 +130,18 @@ function drawCart() {
     cartElem.innerHTML = cartContent
 
     let subTotalElem = document.getElementById('subtotal')
-    subTotalElem.innerHTML = `${cartSubtotal.toFixed(2)}`
+    subTotalElem.innerHTML = `<span class="mdi mdi-currency-usd"></span>${cartSubtotal.toFixed(2)}`
 
     let taxElem = document.getElementById('tax')
-    taxElem.innerHTML = `${(cartSubtotal * .05).toFixed(2)}`
+    taxElem.innerHTML = `<span class="mdi mdi-currency-usd"></span>${(cartSubtotal * .05).toFixed(2)}`
 
     let totalElem = document.getElementById('total')
-    totalElem.innerHTML = `${(cartSubtotal + cartSubtotal * .05).toFixed(2)}`
+    totalElem.innerHTML = `<span class="mdi mdi-currency-usd"></span>${(cartSubtotal + cartSubtotal * .05).toFixed(2)}`
 
     let orderNumElem = document.getElementById('orderNum')
     orderNumElem.innerHTML = `${orderNum}`
+
+    console.log(currentOrder)
 }
 
 function removeProduct(productName) {
@@ -153,7 +155,7 @@ function removeProduct(productName) {
 }
 
 function checkoutCart() {
-    createOrder()
+    //    createOrder()
     for (let i = 0; i < products.length; i++) {
         let product = products[i]
         product.quantity = 0
@@ -162,13 +164,18 @@ function checkoutCart() {
     drawCart()
 }
 
-function createOrder() {
-    for (let i = 0; i < products.length; i++) {
-        let product = products[i]
-        if (product.quantity > 0) {
+/*function createOrder() {
+    for (let i = 0; i < currentOrder.length; i++) {
+        let orderCurrent = currentOrder[i]
+        if (orderCurrent.id == orderNum) {
+            let current = currentOrder[i].id
 
-            orders.push('Num:', orderNum, product.name, product.quantity)
+            for (let i = 0; i < products.length; i++) {
+                let product = products[i]
+                if (product.quantity > 0) {
+                    current.push(product.name, product.quantity)
+                }
+            }
         }
-        console.log(orders)
     }
-}
+}*/

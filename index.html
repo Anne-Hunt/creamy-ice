@@ -15,10 +15,20 @@
 </head>
 
 <body>
-    <header class="container-fluid bg-info">
+    <header class="container-fluid bg-info shadow">
         <section class="row p-4">
-            <div class="col-12 d-flex justify-content-center">
+            <div class="col-12 d-flex justify-content-between">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <title>ice-cream</title>
+                    <path
+                        d="M17.5 6.05C17.25 3.22 14.89 1 12 1S6.75 3.22 6.5 6.05C5.09 6.28 4 7.5 4 9C4 10.66 5.34 12 7 12L12 22L17 12C18.66 12 20 10.66 20 9C20 7.5 18.91 6.28 17.5 6.05M12 17.53L8.89 11.31C8.95 11.26 9 11.21 9.08 11.16C9.93 11.69 10.93 12 12 12S14.07 11.69 14.92 11.16C15 11.21 15.05 11.26 15.11 11.31L12 17.53Z" />
+                </svg>
                 <h1 class="row text-light">Creamy Ice Cream</h1>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <title>information</title>
+                    <path
+                        d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                </svg>
             </div>
         </section>
     </header>
@@ -26,7 +36,7 @@
     <main class="container-fluid bg-dark pt-4">
         <section class="row">
             <div class="col-3 py-2 shopping-cart">
-                <div class="card">
+                <div class="card p-1">
                     <p>Order # <span id="orderNum"></span></p>
                     <hr>
                     <div id="cartElem">
@@ -40,81 +50,93 @@
             </div>
             <div class="col-9 selections">
                 <section class="row py-2 d-flex justify-content-around">
-                    <div class="col-3 card text-center waffle-bowl">
+                    <div class="col-3 card text-center p-0 waffle-bowl">
                         <img src="https://images.unsplash.com/photo-1559703248-dcaaec9fab78?q=80&w=2864&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                             class="card-img-top">
-                        <h5 class="card-title">Waffle Bowl $1</h5>
-                        <button class="btn btn-warning" onclick="addToCart('waffle-bowl')">Add to Order</button>
+                        <h5 class="card-title">Waffle Bowl <span class="mdi mdi-currency-usd"></span>1</h5>
+                        <button class="btn btn-warning" onclick="addToCart('waffle bowl')">Add to Order <span
+                                class="mdi mdi-cart-arrow-down"></span></button>
                     </div>
-                    <div class="col-3 card text-center waffle-cone">
+                    <div class="col-3 card text-center p-0 waffle-cone">
                         <img src="https://images.unsplash.com/photo-1559703248-dcaaec9fab78?q=80&w=2864&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                             class="card-img-top">
-                        <h5 class="card-title">Waffle Cone $1</h5>
-                        <button class="btn btn-warning" onclick="addToCart('waffle-cone')">Add to Order</button>
+                        <h5 class="card-title">Waffle Cone <span class="mdi mdi-currency-usd"></span>1</h5>
+                        <button class="btn btn-warning" onclick="addToCart('waffle cone')">Add to Order <span
+                                class="mdi mdi-cart-arrow-down"></span></button>
                     </div>
-                    <div class="col-3 card text-center bowl">
+                    <div class="col-3 card text-center p-0 bowl">
                         <img src="https://images.unsplash.com/photo-1510035618584-c442b241abe7?q=80&w=2796&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                             class="card-img-top">
-                        <h5 class="card-title">Disposable Bowl $1.50</h5>
-                        <button class="btn btn-warning" onclick="addToCart('bowl')">Add to Order</button>
+                        <h5 class="card-title">Bowl <span class="mdi mdi-currency-usd"></span>1.50</h5>
+                        <button class="btn btn-warning" onclick="addToCart('plastic bowl')">Add to Order <span
+                                class="mdi mdi-cart-arrow-down"></span></button>
                     </div>
                 </section>
 
                 <section class="row py-2 d-flex justify-content-around cream">
-                    <div class="col-3 card text-center vanilla">
+                    <div class="col-3 card text-center p-0 vanilla">
                         <img src="/assets/asfalt-dark.png" class="card-img-top vanilla-image">
-                        <h5 class="card-title">French Vanilla $1.50</h5>
-                        <button class="btn btn-warning" onclick="addToCart('vanilla')">Add to Order</button>
+                        <h5 class="card-title">French Vanilla <span class="mdi mdi-currency-usd"></span>1.50</h5>
+                        <button class="btn btn-warning" onclick="addToCart('vanilla')">Add to Order <span
+                                class="mdi mdi-cart-arrow-down"></span></button>
                     </div>
-                    <div class="col-3 card text-center chocolate">
+                    <div class="col-3 card text-center p-0 chocolate">
                         <img src="/assets/asfalt-dark.png" class="card-img-top chocolate-image">
-                        <h5 class="card-title">Creamy chocolate $1.50</h5>
-                        <button class="btn btn-warning" onclick="addToCart('chocolate')">Add to Order</button>
+                        <h5 class="card-title">Chocolate <span class="mdi mdi-currency-usd"></span>1.50</h5>
+                        <button class="btn btn-warning" onclick="addToCart('chocolate')">Add to Order <span
+                                class="mdi mdi-cart-arrow-down"></span></button>
                     </div>
-                    <div class="col-3 card text-center strawberry">
+                    <div class="col-3 card text-center p-0 strawberry">
                         <img src="/assets/asfalt-dark.png" class="card-img-top strawberry-image">
-                        <h5 class="card-title">Fresh Strawberry $2</h5>
-                        <button class="btn btn-warning" onclick="addToCart('strawberry')">Add to Order</button>
+                        <h5 class="card-title">Fresh Strawberry <span class="mdi mdi-currency-usd"></span>2</h5>
+                        <button class="btn btn-warning" onclick="addToCart('strawberry')">Add to Order <span
+                                class="mdi mdi-cart-arrow-down"></span></button>
                     </div>
                 </section>
 
                 <section class="row py-2 d-flex justify-content-around cream">
-                    <div class="col-3 card text-center butter-brickle">
+                    <div class="col-3 card text-center p-0 butter brickle">
                         <img src="/assets/asfalt-dark.png" class="card-img-top butterbrickle-image">
-                        <h5 class="card-title">Butter Brickle $2</h5>
-                        <button class="btn btn-warning" onclick="addToCart('butter-brickle')">Add to Order</button>
+                        <h5 class="card-title">Butter Brickle <span class="mdi mdi-currency-usd"></span>2</h5>
+                        <button class="btn btn-warning" onclick="addToCart('butter-brickle')">Add to Order <span
+                                class="mdi mdi-cart-arrow-down"></span></button>
                     </div>
-                    <div class="col-3 card text-center potato">
+                    <div class="col-3 card text-center potato p-0">
                         <img src="/assets/asfalt-dark.png" class="card-img-top potato-image">
-                        <h5 class="card-title">Potato $1</h5>
-                        <button class="btn btn-warning" onclick="addToCart('potato')">Add to Order</button>
+                        <h5 class="card-title">Potato <span class="mdi mdi-currency-usd"></span>1</h5>
+                        <button class="btn btn-warning" onclick="addToCart('potato')">Add to Order <span
+                                class="mdi mdi-cart-arrow-down"></span></button>
                     </div>
-                    <div class="col-3 card text-center cranberry">
+                    <div class="col-3 card text-center p-0 cranberry">
                         <img src="/assets/asfalt-dark.png" class="card-img-top cranberry-image">
-                        <h5 class="card-title">Cranberry $3</h5>
-                        <button class="btn btn-warning" onclick="addToCart('cranberry')">Add to Order</button>
+                        <h5 class="card-title">Cranberry <span class="mdi mdi-currency-usd"></span>3</h5>
+                        <button class="btn btn-warning" onclick="addToCart('cranberry')">Add to Order <span
+                                class="mdi mdi-cart-arrow-down"></span></button>
                         </img>
                     </div>
                 </section>
 
                 <section class="row py-2 d-flex justify-content-around toppings">
-                    <div class="col-3 card text-center jimmies">
+                    <div class="col-3 card text-center p-0 jimmies">
                         <img src="https://plus.unsplash.com/premium_photo-1663839412090-27840de8cba0?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                             class="card-img-top jimmies-image">
-                        <h5 class="card-title">Sprinkles $.50</h5>
-                        <button class="btn btn-warning" onclick="addToCart('jimmies')">Add to Order</button>
+                        <h5 class="card-title">Sprinkles <span class="mdi mdi-currency-usd"></span>.50</h5>
+                        <button class="btn btn-warning" onclick="addToCart('sprinkles')">Add to Order <span
+                                class="mdi mdi-cart-arrow-down"></span></button>
                     </div>
-                    <div class="col-3 card text-center chips">
+                    <div class="col-3 card text-center p-0 chips">
                         <img src="https://images.unsplash.com/photo-1585502866757-30ae9e509e31?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                             class="card-img-top chips-image">
-                        <h5 class="card-title">Chocolate Chips $1</h5>
-                        <button class="btn btn-warning" onclick="addToCart('chips')">Add to Order</button>
+                        <h5 class="card-title">Chocolate Chips <span class="mdi mdi-currency-usd"></span>1</h5>
+                        <button class="btn btn-warning" onclick="addToCart('chocolate chips')">Add to Order <span
+                                class="mdi mdi-cart-arrow-down"></span></button>
                     </div>
-                    <div class="col-3 card text-center syrup">
+                    <div class="col-3 card text-center p-0 syrup">
                         <img src="https://images.unsplash.com/photo-1576186725671-1b44cc7f424c?q=80&w=2110&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                             class="card-img-top syrup-image">
-                        <h5 class="card-title">Chocolate Syrup $1</h5>
-                        <button class="btn btn-warning" onclick="addToCart('syrup')">Add to Order</button>
+                        <h5 class="card-title">Chocolate Syrup <span class="mdi mdi-currency-usd"></span>1</h5>
+                        <button class="btn btn-warning" onclick="addToCart('chocolate syrup')">Add to Order <span
+                                class="mdi mdi-cart-arrow-down"></span></button>
                     </div>
                 </section>
             </div>

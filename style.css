@@ -8,13 +8,18 @@ img {
     object-position: center;
 }
 
+svg {
+    fill: white;
+    height: 40px;
+}
+
 
 .vanilla-image {
     background-color: bisque;
 }
 
 .chocolate-image {
-    background-color: brown;
+    background-color: #7B3F00;
 }
 
 .strawberry-image {
@@ -22,7 +27,7 @@ img {
 }
 
 .butterbrickle-image {
-    background-color: gold;
+    background-color: #E1C16E;
 }
 
 .potato-image {
@@ -30,5 +35,5 @@ img {
 }
 
 .cranberry-image {
-    background-color: #800020;
+    background-color: #922B21;
 }
